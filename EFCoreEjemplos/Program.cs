@@ -40,9 +40,11 @@ namespace EFCoreEjemplos
             //direccion.EstudianteId = nEstudiante.Id;
             //AddNewDirection(direccion);
 
-            SeedDatabase();
+            //SeedDatabase();
 
             //TraerEstudiantes();
+
+            FuncionEscalarEnEF();
 
             Console.WriteLine("Query Aplicado");
             Console.ReadLine();
@@ -122,6 +124,17 @@ namespace EFCoreEjemplos
             using (var context = new ApplicationDbContext())
             {
                 var estudiantes = context.Estudiantes.ToList();
+
+                foreach (Estudiante nEstudiante in estudiantes)
+                {
+                    Console.WriteLine("Nombre : {0}", nEstudiante.Nombre);
+                    Console.WriteLine("Apellido : {0}", nEstudiante.Apellido);
+                    Console.WriteLine("Edad : {0}", nEstudiante.Edad);
+                    Console.WriteLine("Direccion : {0}", nEstudiante.Direccion);
+                    Console.WriteLine();
+                }
+
+                Console.Read();
             }
         }
 
@@ -136,6 +149,7 @@ namespace EFCoreEjemplos
             }
         }
 
+        //USO DEL MODELO CONECTADO
         static void EjemploActualizarEstudianteModeloConectado()
         {
             using (var context = new ApplicationDbContext())
@@ -146,6 +160,7 @@ namespace EFCoreEjemplos
             }
         }
 
+        //USO DEL MODEL DESCONECTADO
         static void EjemploActualizarEstudianteModeloDesconectado(Estudiante estudiante)
         {
             using (var context = new ApplicationDbContext())

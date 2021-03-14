@@ -20,7 +20,7 @@ namespace EFCoreEjemplos
             // Agregamos una llave compuesta para tabla EstudiantesCursos
             modelBuilder.Entity<EstudianteCurso>().HasKey(x => new { x.CursoId, x.EstudianteId });
 
-            // Filtro por tipo
+            // Filtro por tipo(Este filtro se aplicara para todas las entidades en este proyecto)
             modelBuilder.Entity<EstudianteCurso>().HasQueryFilter(x => x.Activo == true);
 
             // Table splitting
@@ -33,6 +33,7 @@ namespace EFCoreEjemplos
             modelBuilder.Entity<Estudiante>().Property(x => x.Apellido).HasField("_Apellido");
         }
 
+        //Cuando se salven los cambios,se aplicara este cambio
         public override int SaveChanges()
         {
             // Borrado Suave o Borrado Logico
