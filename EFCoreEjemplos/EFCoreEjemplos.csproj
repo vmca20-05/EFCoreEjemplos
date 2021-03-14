@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20200823214445_Creation_Entitities.cs" />
+    <Compile Remove="Migrations\20200824162835_Add_New_Field.cs" />
+    <Compile Remove="Migrations\20200824170139_Add_New_Class_Direccion.cs" />
+    <Compile Remove="Migrations\20200824173812_Add_New_Property_to_Estudiante.cs" />
+    <Compile Remove="Migrations\20200825014327_Add_Institucion.cs" />
+    <Compile Remove="Migrations\20200825052505_EstudiantesCursos.cs" />
+    <Compile Remove="Migrations\20200825054429_Add_Field_Activo_CursoEstudiante.cs" />
+    <Compile Remove="Migrations\20200826011157_Add_Field_isDeleted_Estudiante.cs" />
+    <Compile Remove="Migrations\20200827014807_Add_EstudianteDetalle.cs" />
+    <Compile Remove="Migrations\20200828013758_Estudiante_Apellido.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="3.1.7" />
+  </ItemGroup>
+
+</Project>
